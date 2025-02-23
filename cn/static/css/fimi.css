@@ -1,0 +1,388 @@
+
+a,a:visited,.alink:visited {
+    color: #131313;
+    text-decoration: none
+}
+
+a:hover {
+    color: #b51c21
+}
+
+a:focus {
+    outline: none
+}
+
+ul {
+    list-style: none
+}
+
+
+.container {
+  max-width: 960px;
+}
+
+
+body {
+  padding-top: 5rem;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif
+  position: relative;
+}
+
+/* .navbar .nav > li:hover .dropdown-menu {
+        display: block;
+    }
+	 */
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+
+.website-top-ad{
+	display: inline-block;
+	
+}
+
+.website-index-nav{
+	
+	width: 100%;
+	/* display: inline-block; */
+	margin-bottom: 0;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+	
+
+.website-index-nav{
+	
+	display: flex;
+	
+}
+
+
+
+}
+	
+.website-index-nav-brand{
+	
+	float: left;
+}
+
+
+.web-nav-menu{
+/* display: inline-block;	 */
+
+}
+
+.navbar-brand{
+	margin-right: 50px;
+}
+
+.nav-item{
+	padding-left : 5px;
+	padding-right: 20px;
+	width: 100px;
+	font-size: large;
+}
+
+.dropdown-item{
+	display: inline-block;
+}
+
+.web-nav-menu-item-product-drone{
+	/* position: relative; */
+	float: left;
+	text-align: left;
+	width: 320px;
+	font-size: small;
+}
+
+.web-nav-menu-item-product-camera{
+	/* position: relative; */
+	float: left;
+	text-align: left;
+	width: 360px;
+	font-size: small;
+}
+
+.web-nav-menu-item-product-gimbal{
+	/* position: relative; */
+	float: left;
+	text-align: left;
+	width: 380px;
+	font-size: small;
+}
+
+
+.web-nav-menu-item-product-img{
+	width: 200px;
+	align-content: center;
+	text-align: left;
+}
+
+
+.web-nav-menu-item-text{
+	/* position: relative; */
+	float: left;
+	text-align: left;
+	width: 250px;
+	font-size: medium;
+	
+}
+
+
+
+#web-nav-ico-lang{
+	
+	vertical-align: top;
+}
+
+.web-nav-btn-store{
+	background: #b51c21;
+	color: #fff;
+	margin-left: 10px;
+	margin-right: 20px;
+	float: right;
+	padding: 10px 26px;
+text-decoration: none;
+}
+
+.web-nav-btn-store:hover{
+	text-decoration: none;
+	color: #fff;
+}
+
+.web-nav-btn-store:visited{
+	text-decoration: none;
+	color: #fff;
+}
+
+.pt-title1{
+	text-align: left;
+	font-size: 7rem;
+	    color: #333333;
+	    font-weight: 500;
+		margin: 20px 0 40px 0;
+	    line-height: 1
+}
+
+.pt-title2{
+	position: relative;
+	text-align: left;
+	    font-size: 3.0rem;
+	    color: #9f9f9f;
+	    font-weight: 100;
+	    margin: 20px 0 40px 0;
+	    text-transform: capitalize;
+	    line-height: 1.2;
+	    margin-top: 40px;
+}
+
+
+
+
+.download-index-product-img{
+	padding: 50px;
+}
+
+.web-download-product-page-img{
+	display: block;
+	margin: auto;
+	width: 40%;
+}
+
+
+.web-maintenance-text{
+	margin: 100px;
+	font-size: large;
+	font-weight: bold;
+	
+}
+
+.web-cn-about-fimi-text{
+	font-family: 'Open Sans',Arial,sans-serif,'Helvetica Neue',Helvetica
+	margin: 10px;
+	line-height:250%;
+	font-size: medium;
+	font-weight: lighter;
+	
+}
+
+
+
+ .swiper-container {
+      width: 100%;
+      height: 43vw;
+	  /* max-height: 822px; */
+	  margin-top: 0px;
+	  margin-left: auto;
+	  margin-right: auto;
+	  background-origin:border-box;
+    }
+
+    .swiper-slide {
+	background-position: center;
+    text-align: left;
+    background: #fff;
+
+    }
+	
+	.slide-title {
+	      text-align: left;
+	      font-size: 5vw;
+	      color: #333333;
+	      font-weight: 500;
+	      line-height: 120%;
+		  margin-top: 25vw;
+		  margin-left:10vw;
+
+	    }
+	
+	 .slide-subtitle {
+	       position: relative; 
+	      text-align: left;
+	      font-size: 3vw;
+	      color: #9f9f9f;
+	      font-weight: 100;
+	      margin-left:10vw;
+		  /* padding-bottom: 100px; */
+		  margin-top: 0.8vw;
+		  /* margin-bottom: 100px; */ 
+	      text-transform: capitalize;
+	      line-height: 1.2;
+	    }
+	
+
+.contact-email-notice {
+	
+	color: #bbb;
+	
+}
+
+
+
+.slide-manta {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/a4-banner-1920x822.jpg);
+	background-repeat:no-repeat;
+
+}
+
+.slide-x8p {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/x8p-1920-822.jpg);
+	background-repeat:no-repeat;
+
+}
+
+.slide-tx10 {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/tx10-banner.jpg);
+	background-repeat:no-repeat;
+
+}
+
+.slide-x8mini {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/x8m3-banner.jpg);
+	background-repeat:no-repeat;
+
+}
+.slide-x8minise {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/x8m3se-banner.jpg);
+	background-repeat:no-repeat;
+
+}
+.slide-x8 {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/x8se2020-banner.jpg);
+	background-repeat:no-repeat;
+
+}
+.slide-a3 {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/gbbanner_3.png);
+	background-repeat: no-repeat;
+
+}
+.slide-x9 {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/banner_x9_4.png);
+	background-repeat: no-repeat;
+
+}
+
+.slide-palm2pro {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/palm2pro-1920x822.jpg);
+	background-repeat: no-repeat;
+}
+.slide-x8tele {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/x8-tele-1920x822.jpg);
+	background-repeat:no-repeat;
+
+}
+
+.slide-x8teleAndPro {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/x8-tele-and-pro-1920x822.jpg);
+	background-repeat:no-repeat;
+
+}
+
+.slide-x8p2025 {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/x8p2025-1920-822.jpg);
+	background-repeat:no-repeat;
+
+}
+
+.slide-x8t {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/x8t-1920-822.jpg);
+	background-repeat:no-repeat;
+
+}
+
+.slide-x8tele-max {
+	background-clip:border-box;
+	background-origin: border-box;
+	background-size: contain;
+	background-image: url(../images/front/x8-tele-max-1920-822.jpg);
+	background-repeat:no-repeat;
+
+}
+
+
+
