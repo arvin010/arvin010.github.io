@@ -1674,8 +1674,8 @@ html {
 }
 
 .in_about_r a img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 155px;
   overflow: hidden
 }
 
