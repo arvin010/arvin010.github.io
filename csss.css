@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +24,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('photo-1576091160550-2173dba999ef.avif');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
 }
@@ -49,59 +50,18 @@ body {
 }
 
 .cta-button {
-    display: inline-block;
     padding: 15px 30px;
-    background: linear-gradient(45deg, #00ff88, #00b8ff);
+    background: linear-gradient(45deg, #00ff88, #00a1ff);
     border: none;
-    border-radius: 50px;
+    border-radius: 30px;
     color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
-    position: relative;
-    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
-    background: linear-gradient(45deg, #00b8ff, #00ff88);
-}
-
-.cta-button:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 10px rgba(0, 255, 136, 0.3);
-}
-
-.cta-button a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
-    transition: 0.5s;
-}
-
-.cta-button:hover::before {
-    left: 100%;
+    transform: scale(1.05);
 }
 
 .features {
