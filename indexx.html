@@ -36,6 +36,566 @@
   <script language="javascript" type="text/javascript" src="template/pc/skin/js/core.js"></script>
   <script language="javascript" type="text/javascript" src="template/pc/skin/js/anim.js"></script>
   <script language="javascript" type="text/javascript" src="template/pc/skin/js/clipboard.min.js"></script>
+  <style>
+    /* 全局配色变量 */
+    :root {
+      --primary-dark: #0a192f;
+      --primary-light: #112240;
+      --accent-cyan: #64ffda;
+      --accent-blue: #00a6ff;
+      --text-primary: #e6f1ff;
+      --text-secondary: #8892b0;
+      --gradient-primary: linear-gradient(120deg, #00a6ff, #64ffda);
+      --glass-bg: rgba(17, 34, 64, 0.8);
+      --glass-border: rgba(100, 255, 218, 0.1);
+    }
+
+    /* 背景色调整 */
+    body {
+      background: var(--primary-dark);
+      color: var(--text-primary);
+    }
+
+    /* 导航栏样式 */
+    .header {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav a {
+      color: var(--text-primary) !important;
+    }
+
+    .nav a:hover {
+      color: var(--accent-cyan) !important;
+    }
+
+    /* 按钮样式统一 */
+    .cta-button, .control-button, .scan-button, .appBtn, .nav-btn a {
+      background: var(--gradient-primary);
+      color: var(--primary-dark) !important;
+      font-weight: bold;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+
+    /* 卡片样式优化 */
+    .productFour .dd, .newsDL .newIcon, .in_about_l, .in_about_r, .application .swiper-slide {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px rgba(100, 255, 218, 0.1);
+    }
+
+    /* 标题样式 */
+    .publicTit h2 {
+      color: var(--accent-cyan);
+    }
+
+    .publicTit p.wenzi {
+      color: var(--text-secondary);
+    }
+
+    /* 内容区块样式 */
+    .in_about {
+      background: linear-gradient(135deg, var(--primary-light) 0%, #1a365d 100%);
+      padding: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .in_about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(100, 255, 218, 0.1)"/></svg>');
+      opacity: 0.1;
+    }
+
+    .in_about_l {
+      background: rgba(10, 25, 47, 0.95);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .in_about_l .publicTit h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(100, 255, 218, 0.2);
+    }
+
+    .in_about_l .txt {
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.8;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      margin: 15px 0;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      border-left: 3px solid var(--accent-cyan);
+      max-height: 200px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-cyan) var(--primary-dark);
+    }
+
+    .in_about_l .txt::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .in_about_l .txt::-webkit-scrollbar-track {
+      background: var(--primary-dark);
+      border-radius: 3px;
+    }
+
+    .in_about_l .txt::-webkit-scrollbar-thumb {
+      background: var(--gradient-primary);
+      border-radius: 3px;
+    }
+
+    .in_about_l .txt::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-cyan);
+    }
+
+    .in_about_l .txt::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: linear-gradient(to top, var(--primary-light), transparent);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .in_about_l .txt:hover::after {
+      opacity: 1;
+    }
+
+    .in_about_l span a {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--gradient-primary);
+      color: var(--primary-dark) !important;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(100, 255, 218, 0.2);
+    }
+
+    .in_about_l span a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+    }
+
+    .in_about_r {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .in_about_r img {
+      max-height: 280px;
+      object-fit: cover;
+    }
+
+    /* 移动端适配 */
+    @media screen and (max-width: 768px) {
+      .in_about {
+        padding: 20px 0;
+      }
+
+      .in_about_l {
+        padding: 20px;
+      }
+
+      .in_about_l .txt {
+        max-height: 180px;
+      }
+
+      .in_about_r img {
+        max-height: 200px;
+      }
+    }
+
+    .product, .newsCenter {
+      background: linear-gradient(to bottom, var(--primary-dark), var(--primary-light));
+    }
+
+    /* 卡片内文字样式 */
+    .productFour .dd h6, .newsDL .newIcon h6 {
+      color: var(--accent-cyan);
+    }
+
+    .productFour .dd p, .newsDL .newIcon p {
+      color: var(--text-secondary);
+    }
+
+    /* 页脚样式 */
+    .footer_na_bg {
+      background: var(--glass-bg);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer_bg {
+      background: var(--primary-dark);
+      border-top: 1px solid var(--glass-border);
+      height: 100px !important;
+    }
+
+    /* 悬浮效果 */
+    .productFour .dd:hover, .newsDL .newIcon:hover {
+      background: linear-gradient(145deg, var(--glass-bg), rgba(100, 255, 218, 0.1));
+      border-color: var(--accent-cyan);
+    }
+
+    /* 图片蒙版效果 */
+    .productFour .dd img, .newsDL .newIcon img, .in_about_r img {
+      filter: brightness(0.9) contrast(1.1);
+      transition: all 0.3s ease;
+    }
+
+    .productFour .dd:hover img, .newsDL .newIcon:hover img, .in_about_r:hover img {
+      filter: brightness(1) contrast(1);
+    }
+
+    /* 动态渐变背景 */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .banner {
+      background: linear-gradient(-45deg, #112240, #0a192f, #1a365d, #234876);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    /* 滚动条样式 */
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-primary);
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--primary-light);
+    }
+
+    /* 移动端适配色彩 */
+    @media screen and (max-width: 768px) {
+      .nav-btn {
+        background: var(--glass-bg);
+      }
+      
+      .iphone-nav {
+        background: var(--primary-dark);
+        border-top: 1px solid var(--glass-border);
+        color: antiquewhite;
+      }
+    }
+
+    /* 基础样式重置和优化 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* 响应式布局基础 */
+    .wp, .wpp {
+      width: 100%;
+      height: 400px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* 修复发光按钮样式 */
+    .cta-button, .control-button, .scan-button, .appBtn, .nav-btn a {
+      display: none;
+      padding: 8px 20px;
+      color: #fff !important;
+      background: linear-gradient(90deg, #00ffea 0%, #00ff88 100%);
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button:hover, .control-button:hover, .scan-button:hover, .appBtn:hover, .nav-btn a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 255, 234, 0.4);
+    }
+
+    /* 修复玻璃态卡片样式 */
+    .productFour .dd, .newsDL .newIcon, .in_about_l, .in_about_r, .application .swiper-slide {
+      background: rgba(20, 40, 60, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 255, 200, 0.1);
+      padding: 20px;
+      margin: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .productFour .dd:hover, .newsDL .newIcon:hover {
+      transform: translateY(-5px);
+    }
+
+    /* 图片响应式处理 */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* 动画优化 */
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.02); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .feature-icon, .productFour .dd img, .newsDL .newIcon img {
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    /* 移动端适配 */
+    @media screen and (max-width: 768px) {
+      /* 导航栏适配 */
+      .nav {
+        display: none;
+      }
+      
+      .nav-btn {
+        display: block;
+      }
+
+      /* 卡片网格适配 */
+      .productFour, .newsDL {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 15px;
+      }
+
+      /* 文字大小适配 */
+      h1, h2 { font-size: 24px; }
+      h3 { font-size: 20px; }
+      p { font-size: 16px; }
+
+      /* 间距适配 */
+      .publicTit {
+        margin: 30px 0;
+      }
+
+      /* 按钮适配 */
+      .cta-button, .control-button, .scan-button {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+      }
+    }
+
+    /* 平板适配 */
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      .productFour, .newsDL {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* 修复页脚样式 */
+    .footer_na {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr) 2fr;
+      gap: 30px;
+      padding: 40px 0;
+    }
+
+    .footer_dl3 {
+      grid-column: 5;
+      text-align: center;
+      padding: 20px;
+      background: rgba(17, 34, 64, 0.5);
+      border-radius: 10px;
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .footer_dl3 img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border: 2px solid rgba(100, 255, 218, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .footer_dl3 img:hover {
+      transform: scale(1.05);
+      border-color: rgba(100, 255, 218, 0.6);
+      box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+    }
+
+    .footer_dl3 p {
+      color: #e6f1ff;
+      font-size: 16px;
+      margin-top: 10px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 移动端适配 */
+    @media screen and (max-width: 768px) {
+      .footer_na {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .footer_dl3 {
+        grid-column: 1;
+        padding: 15px;
+      }
+
+      .footer_dl3 img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .footer_dl3 p {
+        font-size: 14px;
+      }
+    }
+
+    /* 导航下拉菜单样式优化 */
+    .nav .subnav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(17, 34, 64, 0.98);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-radius: 10px;
+      padding: 10px 0;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    .nav li:hover .subnav {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav .subnav a {
+      display: block;
+      padding: 12px 20px;
+      color: #e6f1ff !important;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav .subnav a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: linear-gradient(to bottom, #00ffea, #00ff88);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .nav .subnav a:hover {
+      background: rgba(100, 255, 218, 0.15);
+      color: #64ffda !important;
+      padding-left: 25px;
+      text-shadow: 0 0 8px rgba(100, 255, 218, 0.5);
+    }
+
+    .nav .subnav a:hover::before {
+      transform: scaleY(1);
+    }
+
+    /* 添加下拉箭头动画 */
+    .nav li > a::after {
+      content: '▾';
+      display: inline-block;
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+      color: #64ffda;
+    }
+
+    .nav li:hover > a::after {
+      transform: rotate(180deg);
+    }
+
+    /* 移动端适配 */
+    @media screen and (max-width: 768px) {
+      .iphone-nav .subnav {
+        position: static;
+        background: rgba(17, 34, 64, 0.95);
+        border: 1px solid rgba(100, 255, 218, 0.2);
+        padding: 5px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        margin: 5px 10px;
+        border-radius: 8px;
+      }
+
+      .iphone-nav li.active .subnav {
+        display: block;
+      }
+
+      .iphone-nav .subnav a {
+        padding: 10px 15px;
+        font-size: 13px;
+        color: #f5f5f7 !important;
+      }
+
+      .iphone-nav .subnav a:hover {
+        background: rgba(100, 255, 218, 0.15);
+        color: #64ffda !important;
+      }
+
+      .iphone-nav .subnav a::before {
+        width: 2px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -223,7 +783,7 @@
         </div>
         <p class="txt">　　
           熵弦星核康养机器人公司是新一代智慧康养领域的开拓者，
-          全球领先的智慧康养科技企业，专注于将量子计算、情感AI与仿生机器人技术深度融合，重塑老龄化社会的服务范式。通过尖端人工智能与仿生机器人技术，为全球老龄化社会提供「有温度的科技照护解决方案」。公司以“对抗时间熵增”为科技使命，自主研发的「星核神经元网络」系统，赋予机器人超越传统功能的情感共鸣能力与自适应学习机制，覆盖独居老人监护、认知障碍干预、临终关怀等全生命周期场景，科技向善标杆企业。依托量子计算驱动的「星核AI系统」与仿神经元触感网络，我们打造出全球首个实现情感认知交互的康养机器人族群，覆盖健康监测、生活协助、认知训练、情感陪伴等全场景服务，让科技成为老龄化时代的温柔守护者
+          全球领先的智慧康养科技企业，专注于将量子计算、情感AI与仿生机器人技术深度融合，重塑老龄化社会的服务范式。通过尖端人工智能与仿生机器人技术，为全球老龄化社会提供「有温度的科技照护解决方案」。公司以"对抗时间熵增"为科技使命，自主研发的「星核神经元网络」系统，赋予机器人超越传统功能的情感共鸣能力与自适应学习机制，覆盖独居老人监护、认知障碍干预、临终关怀等全生命周期场景，科技向善标杆企业。依托量子计算驱动的「星核AI系统」与仿神经元触感网络，我们打造出全球首个实现情感认知交互的康养机器人族群，覆盖健康监测、生活协助、认知训练、情感陪伴等全场景服务，让科技成为老龄化时代的温柔守护者
         </p>
         <span><a href="index4200.html?m=home&amp;c=Lists&amp;a=index&amp;tid=1">查看更多+</a></span>
       </div>
@@ -392,14 +952,14 @@
         </dl>
         <dl class="footer_dl2">
           <dt><a href="indexd2f8.html?m=home&amp;c=Lists&amp;a=index&amp;tid=22" title="联系我们">联系我们</a></dt>
-          <dd><a>全国免费服务热线：<span>+86 15226351925</span></a></dd>
-          <dd>邮　箱：15226351925@139.com<br>
-            地　址：苏州市太仓市双浮公路与红新路交叉口西南200米富桥工业园3期6号楼401-406<br />
-            地　址：湖南省祁阳市浯溪南路与灯塔路交叉口东北320米创业产业园 熵弦星核机器人</dd>
+          <dd><a>全国免费服务热线：<span>+86 18719065285</span></a></dd>
+          <dd>邮　箱：horyskx@gmail.com<br> 微信： horysk8
+            <!-- 地　址：苏州市太仓市双浮公路与红新路交叉口西南200米富桥工业园3期6号楼401-406<br /> -->
+            <!-- 地　址：湖南省祁阳市浯溪南路与灯塔路交叉口东北320米创业产业园 熵弦星核机器人</dd> -->
         </dl>
         <dl class="footer_dl3">
           <dd><a><img src="uploads/allimg/202502/wxx.jpg" />
-              <p>关注我们</p>
+              <!-- <p>关注我们</p> -->
             </a></dd>
         </dl>
       </div>
@@ -424,7 +984,7 @@
     <dd class="tel"><i></i><span>服务热线</span>
       <div class="box">
         <p>服务热线</p>
-        <h3>15226351925</h3>
+        <h3>18719065285</h3>
       </div>
     </dd>
     <dd class="code"><i></i><span>微信咨询</span>
@@ -436,7 +996,7 @@
     <div class="wp">
       <ul>
         <li><a href="index.html" title="网站首页"><i class="fa fa-home" aria-hidden="true"></i>网站首页</a></li>
-        <li><a href="tel:+86 15226351925" title="一键拨打"><i class="fa fa-phone" aria-hidden="true"></i>一键拨打</a></li>
+        <li><a href="tel:+86 18719065285" title="一键拨打"><i class="fa fa-phone" aria-hidden="true"></i>一键拨打</a></li>
         <li><a onclick="dkcf()" title="微信咨询"><i class="fa fa-weixin" aria-hidden="true"></i>微信咨询</a></li>
         <li><a href="indexd2f8.html?m=home&amp;c=Lists&amp;a=index&amp;tid=22" title="联系我们"><i class="fa fa-map-marker"
               aria-hidden="true"></i>联系我们</a></li>
@@ -446,7 +1006,7 @@
   <div id="wxnr">
     <div class="nrdf"> <i class="x" onclick="gbcf()">X</i><img src="uploads/allimg/202502/wxx.jpg" />
       <p>截屏，微信识别二维码</p>
-      <p>微信号：<span id="btn" data-clipboard-text="15226351925">15226351925</span></p>
+      <p>微信号：<span id="btn" data-clipboard-text="18719065285">18719065285</span></p>
       <p>（点击微信号复制，添加好友）</p>
       <p><a href="weixin://"><span><i class="fa fa-weixin" aria-hidden="true"></i>打开微信</span></a></p>
     </div>
@@ -457,6 +1017,39 @@
   <!-- 应用插件标签 start -->
 
   <!-- 应用插件标签 end -->
+
+  <script>
+    // 添加滚动监听
+    document.addEventListener('DOMContentLoaded', function() {
+      const txtElement = document.querySelector('.in_about_l .txt');
+      if (txtElement) {
+        txtElement.addEventListener('scroll', function() {
+          // 当滚动到底部时，移除滚动提示
+          if (this.scrollHeight - this.scrollTop === this.clientHeight) {
+            this.style.setProperty('--scroll-hint-opacity', '0');
+          } else {
+            this.style.setProperty('--scroll-hint-opacity', '1');
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    // 移动端导航交互
+    document.addEventListener('DOMContentLoaded', function() {
+      const navItems = document.querySelectorAll('.iphone-nav li > a');
+      navItems.forEach(item => {
+        if (item.nextElementSibling && item.nextElementSibling.classList.contains('subnav')) {
+          item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            parent.classList.toggle('active');
+          });
+        }
+      });
+    });
+  </script>
 </body>
 
 <!-- Mirrored from www.horysk.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 Sep 2024 11:15:34 GMT -->

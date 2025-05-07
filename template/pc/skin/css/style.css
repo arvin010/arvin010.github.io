@@ -77,7 +77,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #434343
+  color: #cc8932
 }
 
 a:hover {
@@ -812,7 +812,7 @@ html {
   width: 0;
   bottom: 0;
   height: 3px;
-  background: #005faf;
+  /* background: #005faf; */
   content: '';
   transition: .5s;
   -webkit-transition: .5s;
@@ -826,7 +826,7 @@ html {
   height: 100%;
   line-height: 100px;
   font-size: 16px;
-  color: #4b4b4b;
+  /* color: #4b4b4b; */
   margin: 0 20px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -834,7 +834,7 @@ html {
 }
 
 .header .nav li .subnav {
-  background: #fff;
+  /* background: #fff; */
   height: auto;
   left: 0;
   overflow: hidden;
@@ -863,7 +863,7 @@ html {
 }
 
 .header .nav li .subnav a {
-  color: #666;
+  /* color: #666; */
   display: block;
   font-size: 13px;
   line-height: 40px;
@@ -873,8 +873,8 @@ html {
 }
 
 .header .nav li .subnav a:hover {
-  color: #005faf;
-  background: #eee;
+  /* color: #005faf;
+  background: #eee; */
 }
 
 .header .nav li.cur a,
@@ -894,7 +894,7 @@ html {
 
 .header .nav li.hover .subnav a:hover,
 .header .nav li:hover .subnav a:hover {
-  color: #005faf;
+  /* color: #005faf; */
 }
 
 .header .nav .search-btn {
@@ -917,8 +917,8 @@ html {
   padding-left: 10px;
   padding-right: 50px;
   border-radius: 20px;
-  border: 1px solid #EFEFEF;
-  background: #FFF;
+  /* border: 1px solid #EFEFEF;
+  background: #FFF; */
   font-size: 14px
 }
 
@@ -1021,14 +1021,14 @@ html {
   top: 0;
   width: 2.09rem;
   height: 100%;
-  background: #fff;
+  /* background: #fff; */
   z-index: 66666666666;
 }
 
 .iphone-nav a {
   display: block;
   padding-left: .44rem;
-  color: #333;
+  /* color: #333; */
   font-size: .12rem;
   height: .39rem;
   line-height: .39rem;
@@ -1233,6 +1233,7 @@ html {
 
 .banner .img a img {
   width: 100%;
+  height: 300px;
 }
 
 .banner .img .swiper-button-prev,
@@ -1386,7 +1387,7 @@ html {
 
 /*首页标题*/
 .icase {
-  background: #f9f9f9;
+  background: var(--primary-light);
   padding-bottom: 5%;
 }
 
@@ -1484,7 +1485,7 @@ html {
 /*产品中心*/
 .productFour {
   padding: 2% 0;
-  background: #f9f9f9;
+  background: var(--primary-light);
 }
 
 .productFour .dd {
@@ -1501,7 +1502,7 @@ html {
 }
 
 .productFour .dd .ddItem {
-  color: #fff;
+  color: var(--primary-light);
   position: absolute;
   top: 0;
   left: 0;
@@ -1675,7 +1676,7 @@ html {
 
 .in_about_r a img {
   width: auto;
-  height: 155px;
+  height: 330px;
   overflow: hidden
 }
 
@@ -2514,6 +2515,7 @@ html {
 @media screen and (max-width: 640px) {
   .f_kslj {
     width: 100%;
+    height: 66px !important;
     background: #212121;
     padding: .8em 0;
     display: block;
@@ -2705,6 +2707,7 @@ html {
 }
 
 /* preloading images*/
+
 
 ul,
 li,

@@ -17,6 +17,40 @@
     <script src="three.min.js"></script>
     <script src="OrbitControls.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Glowing buttons and important elements */
+      .cta-button, .control-button, .scan-button {
+        box-shadow: 0 0 20px #00ffea, 0 0 40px #00ff88;
+        background: linear-gradient(90deg, #00ffea 0%, #00ff88 100%);
+        color: #111;
+        border: none;
+        border-radius: 30px;
+        transition: box-shadow 0.3s, transform 0.3s;
+      }
+      .cta-button:hover, .control-button:hover, .scan-button:hover {
+        box-shadow: 0 0 40px #00ffea, 0 0 80px #00ff88;
+        transform: scale(1.05);
+      }
+
+      /* Glassmorphism cards */
+      .feature-card, .robot-card, .quantum-card, .nanobot-card {
+        background: rgba(20, 40, 60, 0.5);
+        backdrop-filter: blur(8px);
+        border-radius: 20px;
+        border: 1px solid rgba(0,255,200,0.2);
+        box-shadow: 0 4px 32px rgba(0,255,200,0.1);
+      }
+
+      /* Detail animations */
+      .feature-icon, .robot-image img, .quantum-sphere, .nanobot-visualization {
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
