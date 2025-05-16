@@ -24,7 +24,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./uploads/allimg/20250502/2025-05-16_16-23-11.png');
     background-size: cover;
     background-position: center;
 }
